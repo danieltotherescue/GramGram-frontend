@@ -11,7 +11,7 @@
     $log.info("token service loaded!");
 
 //this is the TOKEN_SECRET from the .env file.  Need to make sure this is the right thing
-    var TOKEN_KEY = 'q4DhB}9SDx78p]6Qb+z{ur7A{=Njd:';
+    var TOKEN_KEY = 'GramGramTokenKey';
     var service = {
       store:    store,
       retrieve: retrieve,

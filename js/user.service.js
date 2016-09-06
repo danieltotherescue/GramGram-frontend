@@ -22,6 +22,7 @@
         data:   data
       });
 
+      console.log(data)
       return promise;
     }
   }
