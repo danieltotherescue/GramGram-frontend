@@ -10,7 +10,8 @@
   function tokenService($log, $window) {
     $log.info("token service loaded!");
 
-    var TOKEN_KEY = 'mikesaidtochangethis';
+//this is the TOKEN_SECRET from the .env file.  Need to make sure this is the right thing
+    var TOKEN_KEY = 'q4DhB}9SDx78p]6Qb+z{ur7A{=Njd:';
     var service = {
       store:    store,
       retrieve: retrieve,
