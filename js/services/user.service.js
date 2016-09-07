@@ -11,7 +11,8 @@
     $log.info("user service loaded!");
 
     var service = {
-      create: create
+      create: create,
+      show: show
     };
     return service;
 
@@ -25,6 +26,14 @@
       console.log(data)
       return promise;
     }
-  }
+
+    function show() {
+      var promise = $http({
+        method: 'GET',
+        url:    'http://localhost:3000/users/me',
+      });
+      return promise;
+
+  }}
 
 })();

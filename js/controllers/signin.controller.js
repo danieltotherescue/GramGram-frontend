@@ -9,6 +9,8 @@
 
   function SignInController($log, authService, userService, $state) {
     var vm = this;
+    vm.authService = authService;
+
 
     // BINDINGS - took out the default values
     vm.signUp = {

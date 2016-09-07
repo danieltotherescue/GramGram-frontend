@@ -16,16 +16,38 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js'></script>
 </head>
 <body>
-  <div class="container-fluid">
-    <header ng-controller="NavbarController as vm">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <a ui-sref="welcome" class="navbar-brand">Home</a>
-          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
-        </div>
-      </nav>
-    </header>
+  <div class="">
+      <header ng-controller="NavbarController as vm">
+
+        <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed"
+                 data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                 <span class="sr-only">Toggle Navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+              </button>
+              <a ui-sref="welcome" class="navbar-brand">GramGram</a>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse" aria-expanded="false">
+              <ul class="nav navbar-nav">
+                <li><a ui-sref="about">About</a></li>
+                <li><a ui-sref="compose">Compose a msg</a></li>
+                <li><a ui-sref="select-msg">Select Msg to Realize</a></li>
+                <li><a ui-sref="completed-msgs">Completed Msgs</a></li>
+              </ul>
+            </div>
+            <div>
+              <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+              <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+            </div>
+
+        </nav>
+
+      </header>
 
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
@@ -41,10 +63,11 @@
 
   <script src="/js/app.module.js"></script>
   <script src="/js/app.routes.js"></script>
-  <script src="/js/token.service.js"></script>
-  <script src="/js/auth.service.js"></script>
-  <script src="/js/user.service.js"></script>
-  <script src="/js/signin.controller.js"></script>
-  <script src="/js/navbar.controller.js"></script>
+  <script src="/js/services/token.service.js"></script>
+  <script src="/js/services/auth.service.js"></script>
+  <script src="/js/services/user.service.js"></script>
+  <script src="/js/controllers/signin.controller.js"></script>
+  <script src="/js/controllers/navbar.controller.js"></script>
+  <script src="/js/controllers/composition.controller.js"></script>
 </body>
 </html>
