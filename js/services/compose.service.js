@@ -1,11 +1,11 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('app')
-    .factory("userService", userService);
+    .factory("composeService", composeService);
 
-  userService.$inject = ["$log", "$http"];
+  composeService.$inject = ["$log", "composeService", "$http"];
 
   function userService($log, $http) {
     $log.info("user service loaded!");
@@ -36,4 +36,4 @@
 
   }}
 
-})();
+}());

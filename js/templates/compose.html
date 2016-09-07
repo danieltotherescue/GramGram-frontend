@@ -2,14 +2,11 @@
   <h1>Compose your message</h1>
 
   <form ng-submit="">
+    
     <div class="form-group">
       <label for="examplemessage">Your message</label>
-      <input ng-model="vm.compose.msg" type="field" ng-class="{'red-border': vm.conflict}" class="form-control" id="examplemessage" placeholder="I love you forever and ever">
+      <input  type="field" class="form-control" id="examplemessage" placeholder="I love you forever and ever">
 
-    </div>
-    <div class="form-group">
-      <label for="exampleStyle">Desired Style</label>
-      <input ng-model="vm.compose.style" type="list" class="form-control" id="exampleStyle" placeholder="Style">
     </div>
 
     <div class="form-group">
@@ -32,7 +29,7 @@
 
     <div class="form-group">
       <label for="exampleInputName">Notes</label>
-      <textarea ng-model="vm.compose.notes" class="form-control" rows="3" id="exampleInputName" placeholder="Anything else you'd like to add?  Didn;t see a message Special directions?  Make sure to make it easy for the realizer of your message and include runner-up options for the style of your message :)"></textarea>
+      <textarea class="form-control" rows="3" id="exampleInputName" placeholder="Anything else you'd like to add?  Didn;t see a message Special directions?  Make sure to make it easy for the realizer of your message and include runner-up options for the style of your message :)"></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

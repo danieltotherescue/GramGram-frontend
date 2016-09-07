@@ -4,19 +4,19 @@
   <title>GramGram</title>
   <meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
   <script src="/js/jwt-decode.2.0.1.js"></script>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js'></script>
 </head>
 <body>
-  <div class="">
+
       <header ng-controller="NavbarController as vm">
 
         <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
@@ -29,6 +29,7 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
               </button>
+              <!-- replace this with a logo -->
               <a ui-sref="welcome" class="navbar-brand">GramGram</a>
             </div>
 
@@ -39,8 +40,7 @@
                 <li><a ui-sref="select-msg">Select Msg to Realize</a></li>
                 <li><a ui-sref="completed-msgs">Completed Msgs</a></li>
               </ul>
-            </div>
-            <div>
+
               <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
               <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
             </div>
@@ -52,7 +52,7 @@
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
     </main>
-  </div> <!-- div.container-fluid -->
+   <!-- div.container-fluid -->
 
   <footer>
     <hr>
