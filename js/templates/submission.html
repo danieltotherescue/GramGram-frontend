@@ -2,24 +2,24 @@
 
   <h1>Realize this Message</h1>
 
-  <form ng-submit="vm.submitSignUp();">
+  <form ng-submit="vm.addSubmission()">
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input ng-model="vm.signUp.email" type="text" ng-class="{'red-border': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="I love you forever and ever">
+      <input ng-model="vm.newSubmission.title" type="text" ng-class="{'red-border': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="I love you forever and ever">
     </div>
     <div class="form-group">
       <label for="exampleInputName">Link</label>
-      <input ng-model="vm.signUp.name" type="text" class="form-control" id="exampleInputName" placeholder="link to posted youtube video">
+      <input ng-model="vm.newSubmission.link" type="text" class="form-control" id="exampleInputName" placeholder="link to posted youtube video">
     </div>
 
     <div class="form-group">
       <label for="comment">Comments</label>
-      <textarea ng-model="vm.signUp.username" class="form-control" rows="3" id="comment" placeholder="Anything the requester should know about your work?"></textarea>
+      <textarea ng-model="vm.newSubmission.comments" class="form-control" rows="3" id="comment" placeholder="Anything the requester should know about your work?"></textarea>
     </div>
 
     <div class="form-group">
       <label for="socialMedia">Social Media Links:</label>
-      <textarea ng-model="vm.signUp.username" class="form-control" rows="4" id="socialMedia" placeholder="Promote yourself for your hard work! Give your FB, IG, YT channel, etc. so the users can see and promote you."></textarea>
+      <textarea ng-model="vm.newSubmission.socialMediaLinks" class="form-control" rows="4" id="socialMedia" placeholder="Promote yourself for your hard work! Give your FB, IG, YT channel, etc. so the users can see and promote you."></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

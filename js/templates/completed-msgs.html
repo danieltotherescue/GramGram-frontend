@@ -4,7 +4,7 @@
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th>Title</th>
+          <th>Message</th>
           <th>Style</th>
           <th>Requested by</th>
           <th>Realized by</th>
@@ -12,6 +12,13 @@
         </tr>
         </thead>
       <tbody id="start" data-link="row" class="rowlink">
+        <tr ng-repeat="submission in vm.submissions" ng-click="vm.handleMessageClick(submission)">
+          <td>{{submission.composition.msg}}</td>
+          <td>{{submission.composition.style}}</td>
+          <td>{{submission.user}}</td>
+          <td>{{submission.user}}</td>
+          <td>{{submission.link}}</td>
+        <!-- </tr> -->
       </tbody>
     </table>
 </div>

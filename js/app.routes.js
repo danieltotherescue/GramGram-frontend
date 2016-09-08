@@ -42,7 +42,9 @@
       })
       .state("completed-msgs", {
         url:         "/completed-msgs",
-        templateUrl: "./js/templates/completed-msgs.html"
+        templateUrl: "./js/templates/completed-msgs.html",
+        controller:   "CompletedMsgController",
+        controllerAs: "vm"
       })
       .state("submission", {
         url:         "/submission",
