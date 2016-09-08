@@ -1,17 +1,17 @@
 <div class="container">
   <h1>Compose your message</h1>
 
-  <form ng-submit="">
-    
+  <form ng-submit="vm.addComposition()">
+
     <div class="form-group">
       <label for="examplemessage">Your message</label>
-      <input  type="field" class="form-control" id="examplemessage" placeholder="I love you forever and ever">
+      <input ng-model="vm.newComposition.msg" type="field" class="form-control" id="examplemessage" placeholder="I love you forever and ever">
 
     </div>
 
     <div class="form-group">
       <label for="sel1">Desired Style</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" ng-model="vm.newComposition.style">
         <option>Select your message style</option>
         <option>Hip Hop</option>
         <option>Operatic</option>
@@ -29,7 +29,7 @@
 
     <div class="form-group">
       <label for="exampleInputName">Notes</label>
-      <textarea class="form-control" rows="3" id="exampleInputName" placeholder="Anything else you'd like to add?  Didn;t see a message Special directions?  Make sure to make it easy for the realizer of your message and include runner-up options for the style of your message :)"></textarea>
+      <textarea ng-model="vm.newComposition.notes" class="form-control" rows="3" id="exampleInputName" placeholder="Anything else you'd like to add? Special directions?  Make sure to make it easy for the realizer of your message and include runner-up options for the style of your message :)"></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

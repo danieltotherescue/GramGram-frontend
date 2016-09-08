@@ -35,19 +35,26 @@
       })
       .state("compose", {
         url:         "/compose",
-        templateUrl: "./js/templates/compose.html"
+        templateUrl: "./js/templates/compose.html",
+        controller:   "CompositionController",
+        controllerAs: "vm"
+
       })
       .state("completed-msgs", {
         url:         "/completed-msgs",
         templateUrl: "./js/templates/completed-msgs.html"
       })
-      .state("realize-msg", {
-        url:         "/realize-msg",
-        templateUrl: "./js/templates/realize-msg.html"
+      .state("submission", {
+        url:         "/submission",
+        templateUrl: "./js/templates/submission.html",
+        controller:   "SubmissionController",
+        controllerAs: "vm"
       })
       .state("select-msg", {
         url:         "/select-msg",
-        templateUrl: "./js/templates/select-msg.html"
+        templateUrl: "./js/templates/select-msg.html",
+        controller:   "SelectMsgController",
+        controllerAs: "vm"
       });
 
     $urlRouterProvider.otherwise("/");

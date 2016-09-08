@@ -1,25 +1,33 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('app')
-    .factory("userService", userService);
+    .factory("submissionService", submissionService);
 
-  userService.$inject = ["$log", "$http"];
+  submissionService.$inject = ["$log", "submissionService", "$http"];
 
   function userService($log, $http) {
     $log.info("user service loaded!");
 
     var service = {
+      index: index,
       create: create,
       show: show
     };
     return service;
 
+    function index() {
+      var promise = $http({
+        method: 'GET',
+        url:    'http://localhost:3000/submissions',
+    }
+
+
     function create(data) {
       var promise = $http({
         method: 'POST',
-        url:    'http://localhost:3000/users',
+        url:    'http://localhost:3000/submissions',
         data:   data
       });
 
@@ -30,10 +38,10 @@
     function show() {
       var promise = $http({
         method: 'GET',
-        url:    'http://localhost:3000/users/me',
+        url:    'http://localhost:3000/submissions/:id',
       });
       return promise;
 
   }}
 
-})();
+}());

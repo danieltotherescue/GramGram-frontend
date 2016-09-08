@@ -5,55 +5,37 @@
     .module("app")
     .controller("CompositionController", CompositionController);
 
-    CompositionController.$inject = ["$log", "$http", "composeService"];
+    CompositionController.$inject = ["$log", "$http", "$state"];
 
-    function CompositionController($log, $http, composeService) {
+    function CompositionController($log, $http, $state) {
       var vm = this;
-      vm.api = composeService;
 
-      $http.get("http://localhost:3000/api/msgs")
-      .then(function(response) {
-        vm.all = response.data.msgs;
-      }, function(error) {
-        console.log(error)
-      });
+      vm.all = [];
+      vm.newComposition = {};
+      vm.addComposition = addComposition;
+      // vm.composeService = composeService;
 
-    function newMsg() {
-      $http.post("http://localhost:3000/api/msgs",
-        vm.newMsg)
+
+    function addComposition() {
+      $http.post("http://localhost:3000/compositions",
+        vm.newComposition)
         .then(function(response) {
-          vm.all.push(response.data.msg);
-          vm.newCriminal = {};
+          $state.go('select-msg')
+          vm.newComposition = {};
         }, function(error) {
           console.log(error)
         });
     }
 
-    function deleteMsg(msg) {
-      console.log(msg._id);
-      $http.delete("http://localhost:3000/api/msgs/"+msg._id)
-        .then(function() {
-          vm.all.splice(vm.all.indexOf(msg), 1);
-        })
+    function showComposition(){
+      $http.get("http://localhost:3000/compositions")
+      .then(function(response) {
+        vm.all = response.data.compositions;
+      }, function(error) {
+        console.log(error)
+      });
     }
 
-    function updateMsg(msg) {
-      if (msg.status == "unknown") {
-        msg.status = "dead";
-      } else if (msg.status == "dead") {
-        msg.status = "alive"
-      } else {
-        msg.status = "unknown"
-      }
-
-      $http.patch("http://localhost:3000/api/msgs/"+msg._id,
-        msg)
-        .then(function(response) {
-
-        }, function(error) {
-          console.log(error)
-        })
-    }
 
       $log.info("CompositionController loaded!");
     }
