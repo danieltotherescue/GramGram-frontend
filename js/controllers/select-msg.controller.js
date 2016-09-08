@@ -19,7 +19,7 @@ function SelectMsgController($log, $http, $state) {
   });
 
   vm.handleMessageClick = function (message){
-    $state.go('submission')
+    $state.go('submission', {composition_id: message._id})
     console.log(message.msg);
   }
 }

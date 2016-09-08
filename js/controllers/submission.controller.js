@@ -6,9 +6,9 @@
     .module("app")
     .controller("SubmissionController", SubmissionController);
 
-    SubmissionController.$inject = ["$log", "$http", "$state"];
+    SubmissionController.$inject = ["$log", "$http", "$state", "$stateParams"];
 
-    function SubmissionController($log, $http, $state) {
+    function SubmissionController($log, $http, $state, $stateParams) {
       var vm = this;
 
       vm.all = [];
@@ -16,8 +16,8 @@
       vm.addSubmission = addSubmission;
       // vm.composeService = composeService;
 
-
     function addSubmission() {
+      vm.newSubmission.composition = $stateParams.composition_id
       $http.post("http://localhost:3000/submissions",
         vm.newSubmission)
         .then(function(response) {

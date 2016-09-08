@@ -47,7 +47,7 @@
         controllerAs: "vm"
       })
       .state("submission", {
-        url:         "/submission",
+        url:         "/submission/:composition_id",
         templateUrl: "./js/templates/submission.html",
         controller:   "SubmissionController",
         controllerAs: "vm"

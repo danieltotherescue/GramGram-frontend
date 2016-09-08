@@ -19,13 +19,14 @@ function CompletedMsgController($log, $http, $state) {
     console.log(error)
   });
 
-  $http.get("http://localhost:3000/compositions")
-  .then(function(response) {
-    vm.messages = response.data.compositions;
-  }, function(error) {
-    console.log(error)
-  });
+  // $http.get("http://localhost:3000/compositions")
+  // .then(function(response) {
+  //   vm.messages = response.data.compositions;
+  // }, function(error) {
+  //   console.log(error)
+  // });
 
+  //whne clicked, the row will take you back to the home page
   vm.handleMessageClick = function (submission){
     $state.go('welcome')
     console.log(submission.title);
