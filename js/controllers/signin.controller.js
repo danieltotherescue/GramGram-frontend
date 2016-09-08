@@ -44,7 +44,7 @@
           // on error
           function(err) {
             if (err.status === 409) vm.conflict = true;
-            $log.info('Error Claire-r:', err);
+            $log.info('Error:', err);
           }
         );
     }
@@ -56,6 +56,21 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
+            $state.go('welcome');
+          },
+          // on error
+          function(err) {
+            $log.info('Error:', err);
+          }
+        );
+    }
+    function submitLogOut() {
+      authService
+        .logOut(vm.logOut)
+        .then(
+          // on success
+          function() {
+            $log.info('Logged out!');
             $state.go('welcome');
           },
           // on error

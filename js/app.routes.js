@@ -27,7 +27,9 @@
       })
       .state("profile", {
         url:         "/profile",
-        templateUrl: "./js/templates/profile.html"
+        templateUrl: "./js/templates/profile.html",
+        controller:   "CompletedMsgController",
+        controllerAs: "vm"
       })
       .state("about", {
         url:         "/about",

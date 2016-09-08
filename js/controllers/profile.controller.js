@@ -3,13 +3,13 @@
 
   angular
     .module("app")
-    .controller("CompletedMsgController", CompletedMsgController);
+    .controller("ProfileController", ProfileController);
 
-  CompletedMsgController.$inject = ["$log", "$http", "$state"];
+  ProfileController.$inject = ["$log", "$http", "$state"];
 
-function CompletedMsgController($log, $http, $state) {
+function ProfileController($log, $http, $state) {
   var vm = this
-  vm.title = "CompletedMsgController"
+  vm.title = "ProfileController"
   console.log(vm.title)
   $http.get("http://localhost:3000/submissions")
   .then(function(response) {
@@ -22,7 +22,6 @@ function CompletedMsgController($log, $http, $state) {
   $http.get("http://localhost:3000/compositions")
   .then(function(response) {
     vm.messages = response.data.compositions;
-    console.log(vm.messages);
   }, function(error) {
     console.log(error)
   });

@@ -1,20 +1,28 @@
+<div class="container">
+
 <p>Your Profile</p>
 
 <h2>Messages you composed</h2>
 (table of messages with links to edit/delete)
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Style</th>
-        <th>Requested by</th>
-        <th>Date Needed by</th>
-      </tr>
-      </thead>
-    <tbody id="start" data-link="row" class="rowlink">
-    </tbody>
-  </table>
-</div>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Style</th>
+      <th>Notes</th>
+      <th>Requested by</th>
+    </tr>
+    </thead>
+  <tbody id="start" data-link="row" class="rowlink">
+    <tr ng-repeat="message in vm.messages" ng-click="vm.handleMessageClick(message)">
+      <td>{{message.msg}}</td>
+      <td>{{message.style}}</td>
+      <td>{{message.notes}}</td>
+      <td>{{message.user}}</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h2>Look at all the messages/dreams you realized!</h2>
 <table class="table table-striped table-bordered table-hover">
@@ -30,4 +38,5 @@
   <tbody id="start" data-link="row" class="rowlink">
   </tbody>
 </table>
+
 </div>
