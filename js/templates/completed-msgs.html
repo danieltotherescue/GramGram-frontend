@@ -8,22 +8,22 @@
         <th>Style</th>
         <th>Requested by</th>
         <th>Realized by</th>
-        <th>Youtube Thumbnail (videoplay when scrolled over)</th>
+        <th>Youtube Video</th>
       </tr>
       </thead>
     <tbody id="start" data-link="row" class="rowlink">
       <tr ng-repeat="submission in vm.submissions" ng-click="vm.handleMessageClick(submission)">
         <td>{{submission.composition.msg}}</td>
         <td>{{submission.composition.style}}</td>
-        <td>{{submission.composition.user}}</td>
-        <td>{{submission.user}}</td>
+        <td>{{submission.composition.user.username}}</td>
+        <td>{{submission.user.username}}</td>
         <td><ng-youtube-embed
               url="submission.link"
               autoplay="false"
               color="white"
               disablekb="true"
-              width="270px"
-              height="170px"
+              width="240px"
+              height="140px"
               rel="false"
               end="20">
             </ng-youtube-embed></td>

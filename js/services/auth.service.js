@@ -23,7 +23,7 @@
     }
 
     function currentUser(){
-      return token.decode
+      return token.decode()
     }
 
     function logIn(data) {
