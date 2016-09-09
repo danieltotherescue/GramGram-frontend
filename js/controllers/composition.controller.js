@@ -17,7 +17,7 @@
 
 
     function addComposition() {
-      $http.post("http://localhost:3000/compositions",
+      $http.post("https://gram-gram.herokuapp.com/compositions",
         vm.newComposition)
         .then(function(response) {
           $state.go('select-msg')
@@ -28,7 +28,7 @@
     }
 
     function showComposition(){
-      $http.get("http://localhost:3000/compositions")
+      $http.get("https://gram-gram.herokuapp.com/compositions")
       .then(function(response) {
         vm.all = response.data.compositions;
       }, function(error) {

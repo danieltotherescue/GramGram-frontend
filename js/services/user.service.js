@@ -19,7 +19,7 @@
     function create(data) {
       var promise = $http({
         method: 'POST',
-        url:    'http://localhost:3000/users',
+        url:    'https://gram-gram.herokuapp.com/users',
         data:   data
       });
 
@@ -30,7 +30,7 @@
     function show() {
       var promise = $http({
         method: 'GET',
-        url:    'http://localhost:3000/users/me',
+        url:    'https://gram-gram.herokuapp.com/users/me',
       });
       return promise;
 

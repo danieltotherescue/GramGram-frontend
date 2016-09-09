@@ -12,7 +12,7 @@ function ProfileController($log, $http, $state, authService) {
   console.log(authService.currentUser())
   vm.title = "ProfileController"
   console.log(vm.title)
-  $http.get("http://localhost:3000/submissions")
+  $http.get("https://gram-gram.herokuapp.com/submissions")
   .then(function(response) {
     vm.submissions = response.data.submissions.filter(function(submission){
       return submission.user !== authService.currentUser._id;
@@ -22,7 +22,7 @@ function ProfileController($log, $http, $state, authService) {
     console.log(error)
   });
 
-  $http.get("http://localhost:3000/compositions")
+  $http.get("https://gram-gram.herokuapp.com/compositions")
   .then(function(response) {
     vm.messages = response.data.compositions.filter(function(composition){
       return composition.user !== authService.currentUser._id;

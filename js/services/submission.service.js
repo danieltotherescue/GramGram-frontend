@@ -20,14 +20,14 @@
     function index() {
       var promise = $http({
         method: 'GET',
-        url:    'http://localhost:3000/submissions',
+        url:    'https://gram-gram.herokuapp.com/submissions',
     }
 
 
     function create(data) {
       var promise = $http({
         method: 'POST',
-        url:    'http://localhost:3000/submissions',
+        url:    'https://gram-gram.herokuapp.com/submissions',
         data:   data
       });
 
@@ -38,7 +38,7 @@
     function show() {
       var promise = $http({
         method: 'GET',
-        url:    'http://localhost:3000/submissions/:id',
+        url:    'https://gram-gram.herokuapp.com/submissions/:id',
       });
       return promise;
 

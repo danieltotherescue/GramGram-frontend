@@ -11,7 +11,7 @@ function SelectMsgController($log, $http, $state) {
   var vm = this
   vm.title = "SelectMsgController"
   console.log(vm.title)
-  $http.get("http://localhost:3000/compositions")
+  $http.get("https://gram-gram.herokuapp.com/compositions")
   .then(function(response) {
     vm.messages = response.data.compositions;
   }, function(error) {

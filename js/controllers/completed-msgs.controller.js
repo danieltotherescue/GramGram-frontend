@@ -11,7 +11,7 @@ function CompletedMsgController($log, $http, $state) {
   var vm = this
   vm.title = "CompletedMsgController"
   console.log(vm.title)
-  $http.get("http://localhost:3000/submissions")
+  $http.get("https://gram-gram.herokuapp.com/submissions")
   .then(function(response) {
     vm.submissions = response.data.submissions;
     console.log(vm.submissions);
@@ -19,7 +19,7 @@ function CompletedMsgController($log, $http, $state) {
     console.log(error)
   });
 
-  $http.get("http://localhost:3000/compositions")
+  $http.get("https://gram-gram.herokuapp.com/compositions")
   .then(function(response) {
     vm.messages = response.data.compositions;
     console.log(vm.messages);

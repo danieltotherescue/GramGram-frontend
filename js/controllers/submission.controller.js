@@ -18,7 +18,7 @@
 
     function addSubmission() {
       vm.newSubmission.composition = $stateParams.composition_id
-      $http.post("http://localhost:3000/submissions",
+      $http.post("https://gram-gram.herokuapp.com/submissions",
         vm.newSubmission)
         .then(function(response) {
           $state.go('completed-msgs')
@@ -29,7 +29,7 @@
     }
 
     function showSubmission(){
-      $http.get("http://localhost:3000/submissions")
+      $http.get("https://gram-gram.herokuapp.com/submissions")
       .then(function(response) {
         vm.all = response.data.submissions;
       }, function(error) {
